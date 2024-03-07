@@ -1,0 +1,8 @@
+{
+    "idlArr": [
+        "novel_origin/toutiao_novel_serial_node_fe_i18n.thrift",
+        "novel_origin/toutiao_muye_overseas_homeapi.thrift",
+        "novel_origin/toutiao_muye_overseas_statisticapi.thrift",
+        "novel_origin/toutiao_novel_origin_overseas_bookapi.thrift"
+    ]
+}

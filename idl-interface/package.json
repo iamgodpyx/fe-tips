@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "idl": "npx idl-update -c idl.json"
+  }
+}
