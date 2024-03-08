@@ -4614,10 +4614,18 @@ done
 发达国家提现平台开发
 - 新建海外boe用户中台  done
 github迁移
-- idl定义生成方案
-- axios请求方案
-- fontsize方案
+- idl定义生成方案   done
+- axios请求方案     done
+- fontsize方案      done
 
+
+低优先级：
+
+
+
+2024 3/8
+高优先级：
+发达国家提现平台开发，hold
 
 低优先级：
 
