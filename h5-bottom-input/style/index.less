@@ -1,0 +1,121 @@
+@import '../../../style/mixin.less';
+
+.bottom-textarea {
+    position: fixed;
+    top: -1000px;
+    right: 0;
+    left: 0;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 0;
+    opacity: 0;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.5, 1);
+    transition-duration: 150ms;
+    transition-property: none;
+
+    &.permanent {
+        top: unset;
+        bottom: 0;
+        opacity: 1;
+    }
+
+    @inputPaddingY: 12; // top/bottom padding
+    @inputPaddingX: 24; // left/right padding
+
+    &-content {
+        position: relative;
+        background-color: #fff;
+
+        &-blocker {
+            position: absolute;
+            .rem(top, @inputPaddingY);
+            .rem(right, @inputPaddingX);
+            .rem(bottom, @inputPaddingY);
+            .rem(left, @inputPaddingX);
+            z-index: 1;
+            background-color: transparent;
+
+            &.has-btn {
+                right: 44px;
+            }
+
+            &.has-safe-area {
+                .rem(bottom, 34 + @inputPaddingY); // 50 = 16 + 34 ...
+                // 其实只有 IOS 需要 safe area 但是貌似 fizzo 的 webview 没有提供...
+                // bottom: calc(16px + constant(safe-area-inset-bottom));
+                // bottom: calc(16px + env(safe-area-inset-bottom));
+            }
+        }
+
+        .safe-area-transition {
+            transition: height 150ms cubic-bezier(0.25, 0.8, 0.5, 1);
+        }
+
+        .textarea-wrap {
+            position: relative;
+            display: flex;
+            flex: 0 0;
+            align-items: center;
+            .rem(padding, @inputPaddingY @inputPaddingX);
+            overflow: visible;
+
+            .serial-i18n-input-container {
+                background: rgba(0, 0, 0, 4%);
+                .rem(border-radius, 20);
+            }
+
+            &-input {
+                flex: 1 1;
+
+                &-element {
+                    .rem(max-height, 100);
+                }
+
+                &-placeholder {
+                    position: absolute;
+                    .rem(top, 10);
+                    .rem(left, 16);
+                    .rem(font-size, 14);
+                    .rem(line-height, 20);
+                    color: #888;
+                    pointer-events: none;
+                    width: 90%;
+                    overflow-x: hidden;
+                    text-overflow: ellipsis;
+                    word-wrap: normal;
+                    white-space: nowrap;
+                }
+            }
+
+            &-btn {
+                display: flex;
+                flex: 0 0;
+                align-items: center;
+                justify-content: center;
+                .rem(min-width, 32);
+                .rem(height, 32);
+                .rem(margin-left, 16);
+                .rem(font-size, 32);
+                .rem(line-height, 32);
+                white-space: nowrap;
+            }
+        }
+    }
+
+    &-down-white {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        .rem(height, 1000);
+        background-color: #f6f6f6;
+    }
+
+    &__submit {
+        .rem(width, 28);
+        .rem(height, 28);
+        flex-shrink: 0;
+    }
+}
