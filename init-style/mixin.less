@@ -1,0 +1,294 @@
+@import './variables.less';
+
+.set-max-width() {
+    margin: 0 auto;
+}
+
+.img-fit() {
+    border-radius: 50%;
+    object-fit: cover;
+
+    &[src=''],
+    &:not([src]) {
+        opacity: 0;
+    }
+}
+
+.flex-center() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// 隐藏滚动条
+.hide-scroll-bar() {
+    &::-webkit-scrollbar {
+        display: none; /* Chrome Safari */
+    }
+
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+}
+
+.tootip-offset(@x, @y, @origin: '') {
+    & when (not(@origin = '')) {
+        transform-origin: @origin 0 !important;
+    }
+
+    .arco-tooltip-content {
+        transform: translate(@x, @y);
+    }
+}
+
+//文字溢出隐藏
+.text-ellipsis(@width: 100%) {
+    width: @width;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: normal;
+    white-space: nowrap;
+}
+
+//多行文字溢出隐藏(@lines: 最大可容纳行数，超过则剩余部分隐藏)
+.text-multi-ellipsis(@lines:2) {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    overflow-wrap: break-word;
+    -webkit-line-clamp: @lines;
+    -webkit-box-orient: vertical;
+}
+
+// 1像素的四边边框，给after设置border-radius可以有圆角效果
+.onepx-border-all(@borderColor: '', @borderRadius: 0px, @borderWidth: 1px) {
+    position: relative;
+    border: none;
+
+    &::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        content: '';
+        border-style: solid;
+        border-width: @borderWidth;
+        border-radius: @borderRadius;
+        transform-origin: left top;
+        & when (not(@borderColor = '')) {
+            border-color: @borderColor;
+        }
+    }
+}
+
+// 1像素上边框
+.onepx-border-top(@borderColor: '', @borderRadius: 0, @borderWidth: 1px) {
+    position: relative;
+    border: none;
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        box-sizing: border-box;
+        width: 100%;
+        height: @borderWidth;
+        pointer-events: none;
+        content: '';
+        border-top-style: solid;
+        border-top-width: @borderWidth;
+        border-radius: @borderRadius;
+        transform-origin: left top;
+        & when (not(@borderColor = '')) {
+            border-top-color: @borderColor;
+        }
+    }
+}
+
+// 1像素下边框
+.onepx-border-bottom(@borderColor: '', @borderRadius: 0, @borderWidth: 1px) {
+    position: relative;
+    border: none;
+
+    &::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        box-sizing: border-box;
+        width: 100%;
+        height: @borderWidth;
+        pointer-events: none;
+        content: '';
+        border-bottom-style: solid;
+        border-bottom-width: @borderWidth;
+        border-radius: @borderRadius;
+        transform-origin: left bottom;
+        & when (not(@borderColor = '')) {
+            border-bottom-color: @borderColor;
+        }
+    }
+}
+
+// 1像素左边框
+.onepx-border-left(@borderColor: '', @borderRadius: 0px, @borderWidth: 1px) {
+    position: relative;
+    border: none;
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        box-sizing: border-box;
+        width: @borderWidth;
+        height: 100%;
+        pointer-events: none;
+        content: '';
+        border-left-style: solid;
+        border-left-width: @borderWidth;
+        border-radius: @borderRadius;
+        transform-origin: left top;
+        & when (not(@borderColor = '')) {
+            border-left-color: @borderColor;
+        }
+    }
+}
+
+// 1像素右边框
+.onepx-border-right(@borderColor: '', @borderRadius: 0, @borderWidth: 1px) {
+    position: relative;
+    border: none;
+
+    &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        box-sizing: border-box;
+        width: @borderWidth;
+        height: 100%;
+        pointer-events: none;
+        content: '';
+        border-right-style: solid;
+        border-right-width: @borderWidth;
+        border-radius: @borderRadius;
+        transform-origin: right top;
+        & when (not(@borderColor = '')) {
+            border-right-color: @borderColor;
+        }
+    }
+}
+
+.font(@size, @height, @color: black, @weight: 400) {
+    font-size: @size;
+    //height: @height;
+    font-weight: @weight;
+    line-height: @height;
+    color: @color;
+}
+
+.overlay(@color, @opacity, @border-radius: 0) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    content: '';
+    background-color: @color;
+    border-radius: @border-radius;
+    opacity: @opacity;
+}
+
+.white-panel-overlay(@border-radius: 0) {
+    .overlay(black, 0.08, @border-radius);
+}
+
+.position-center(@position) {
+    position: @position;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.slide-y-transition(@prefix, @offset) {
+    .@{prefix}-enter {
+        opacity: 0;
+        transform: translateY(@offset);
+    }
+    .@{prefix}-enter-active {
+        opacity: 1;
+        // material design
+        transition: all 150ms cubic-bezier(0, 0, 1, 1);
+        transform: translateY(0);
+    }
+    .@{prefix}-exit {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .@{prefix}-exit-active {
+        opacity: 0;
+        transition: all 75ms cubic-bezier(0, 0, 1, 1);
+        transform: translateY(@offset);
+    }
+}
+
+// 0.5px的线
+.divider(@direction) {
+    position: absolute;
+    display: block;
+    content: '';
+    background: rgba(0, 0, 0, 8%);
+    transform-origin: 0 0;
+
+    & when (@direction = 'v') {
+        width: 1px;
+        height: 100%;
+        transform: scaleX(0.5);
+    }
+
+    & when (@direction = 'h') {
+        width: 100%;
+        height: 1px;
+        transform: scaleY(0.5);
+    }
+}
+
+// 小红点
+.red-dot(@size: 6px) {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    z-index: 10;
+    display: block;
+    width: @size;
+    height: @size;
+    content: '';
+    background-color: @error-color;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.component-border-box() {
+    box-sizing: border-box;
+
+    & * {
+        box-sizing: border-box;
+    }
+}
+
+.light-tag() {
+    color: @main-color;
+    background-color: rgba(255, 74, 0, 8%);
+}
+
+.default-tag() {
+    color: #000;
+    background-color: rgba(0, 0, 0, 4%);
+}
+
+.scroll-wrap(@width: 100%) {
+    .hide-scroll-bar();
+
+    width: @width;
+    overflow: scroll;
+}

@@ -1,0 +1,84 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- H5 调试用下面 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" />
+        <title>Fizzo</title>
+        <script src="https://lf16-oversea.goofy-cdn.com/obj/goofy-sg/secsdk/secsdk-lastest.umd.js"></script>
+        <script>
+            function setRootPixel() {
+                var defaultFontSize = 0;
+
+                function getDefaultFontSize() {
+                    if (defaultFontSize) {
+                        return defaultFontSize;
+                    }
+
+                    document.documentElement.style.fontSize = '';
+                    var temp = document.createElement('div');
+                    temp.style.cssText = 'width:1rem;display:none';
+                    document.head.appendChild(temp);
+                    defaultFontSize =
+                        +window.getComputedStyle(temp, null).getPropertyValue('width').replace('px', '') || 16;
+                    document.head.removeChild(temp);
+
+                    return defaultFontSize;
+                }
+
+                function setRootFontSize() {
+                    var rem2px = 50;
+                    var clientWidth =
+                        window.innerWidth && document.documentElement.clientWidth
+                            ? Math.min(window.innerWidth, document.documentElement.clientWidth)
+                            : window.innerWidth ||
+                              document.documentElement.clientWidth ||
+                              (document.body && document.body.clientWidth) ||
+                              375;
+
+                    var htmlFontSizePx = (clientWidth / 375) * rem2px;
+
+                    window.ROOT_FONT_SIZE = htmlFontSizePx;
+
+                    var htmlRootElement = document.querySelector('html');
+                    if (htmlRootElement) {
+                        htmlRootElement.style.fontSize = (htmlFontSizePx / getDefaultFontSize()) * 100 + '%';
+                    }
+                }
+
+                function adjust(immediate) {
+                    if (immediate) {
+                        setRootFontSize();
+                        return;
+                    }
+
+                    setTimeout(setRootFontSize, 30);
+                }
+
+                adjust(true);
+
+                window.addEventListener('resize', adjust, false);
+                // document.body.classList.add('mobile');
+
+                if ('onorientationchange' in window) {
+                    window.addEventListener('orientationchange', adjust, false);
+                }
+            }
+
+            typeof window !== 'undefined' && setRootPixel();
+        </script>
+    </head>
+    <body class="mobile">
+        <div id="root"></div>
+        <script>
+            window.onload = function () {
+                setTimeout(function () {
+                    window.scrollTo(0, 0);
+                }, 1);
+            };
+        </script>
+        <script>
+            window.__I18N = {};
+        </script>
+    </body>
+</html>
