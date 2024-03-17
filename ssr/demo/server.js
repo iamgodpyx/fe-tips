@@ -21,7 +21,7 @@ app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
 
-const a = path.resolve(__dirname, './views/index.ejs');
-console.log(123123, a);
+// const a = path.resolve(__dirname, './views/index.ejs');
+// console.log(123123, a);
 
-console.log(111, JSON.stringify(require(a)));
+// console.log(111, JSON.stringify(require(a)));
