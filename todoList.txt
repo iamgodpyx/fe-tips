@@ -4745,6 +4745,7 @@ vscode setting配置记录一下
 - bfc
 - 简历完善
 - 无限滚动sandbox
+- promise面试题
 
 低优先级：
 
