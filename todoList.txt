@@ -4753,11 +4753,11 @@ vscode setting配置记录一下
 2024 3/21
 高优先级：
 学习
-- 防抖、截流
+- 防抖、截流    done
 - lru
 - 简历投一下    done
 - hr谈赔偿  done
-- flex: 1;
+- flex: 1;  done
 
 低优先级：
 
