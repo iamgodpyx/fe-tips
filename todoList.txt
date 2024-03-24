@@ -4772,6 +4772,49 @@ vscode setting配置记录一下
 
 
 
+2024 3/23
+高优先级：
+学习
+- lru
+- 为什么不能在条件和循环里写hook  done
+- ts常见工具类型   done
+- 树-算法题
+- 链表-算法题
+- 图-算法题（写一个）
+- vue3的proxy相比于vue2的defineProperty有什么改变 done
+- new   done
+- call apply bind   done
+- promise all   done
+- lodash get    done
+
+低优先级：
+
+
+
+2024 3/23
+高优先级：
+学习
+- lru   done
+- 树-算法题     done
+- 链表-算法题   done
+- 图-算法题（写一个）   done
+
+低优先级：
+
+2024 3/24
+高优先级：
+学习
+- lru   done
+- 树-算法题     done
+- 链表-算法题   done
+- 图-算法题（写一个）   done
+- 网络安全
+
+低优先级：
+
+
+
+
 
 
 
