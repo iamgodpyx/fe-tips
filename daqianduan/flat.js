@@ -39,7 +39,6 @@ var longestCommonPrefix = function(strs) {
 
     for (let i = 0; i < shortStr.length; i++) {
        const _result = result + shortStr[i];
-       console.log(_result,123, result, shortStr[i])
         if (strs.some(item => !item.startsWith(_result))) {
             return result;
         } else {

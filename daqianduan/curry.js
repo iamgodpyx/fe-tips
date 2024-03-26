@@ -10,26 +10,44 @@
 //         */
 //         : (..._args) => curry(fn, ...args, ..._args);
 
-const curry = (fn) => {
-    return function curriedFn(...args) {
-        if (args.length < fn.length) {
-            return function () {
-                return curriedFn(...[...args, ...Array.from(arguments)])
-            }
-        }
+// const curry = (fn) => {
+//   return function curriedFn(...args) {
+//     if (args.length < fn.length) {
+//       return function () {
+//         return curriedFn(...[...args, ...Array.from(arguments)]);
+//       };
+//     }
 
+//     return fn(...args);
+//   };
+// };
 
-        return fn(...args)
+// function add1(x, y, z) {
+//   return x + y + z;
+// }
+// const add = curry(add1);
+// console.log(add(1, 2, 3));
+// console.log(add(1)(2)(3));
+// console.log(add(1, 2)(3));
+// console.log(add(1)(2, 3));
+
+function myCurry(fn) {
+  return function curriedFn(...args) {
+    if (args.length < fn.length) {
+      return function (...val) {
+        return curriedFn(...[...args, ...val]);
+      };
     }
+    return fn(...args);
+  };
 }
 
 function add1(x, y, z) {
-    return x + y + z;
+  return x + y + z;
 }
-const add = curry(add1);
+
+const add = myCurry(add1);
 console.log(add(1, 2, 3));
 console.log(add(1)(2)(3));
 console.log(add(1, 2)(3));
 console.log(add(1)(2, 3));
-
-

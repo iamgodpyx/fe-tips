@@ -51,21 +51,42 @@
 
 
 
-Promise.resolve().then(() => {
-  console.log(0);
-  return Promise.resolve(4);
-}).then((res) => {
-  console.log(res)
-})
+// Promise.resolve().then(() => {
+//   console.log(0);
+//   return Promise.resolve(4);
+// }).then((res) => {
+//   console.log(res)
+// })
 
-Promise.resolve().then(() => {
-  console.log(1);
-}).then(() => {
-  console.log(2);
-}).then(() => {
-  console.log(3);
-}).then(() => {
-  console.log(5);
-}).then(() =>{
-  console.log(6);
-})
+// Promise.resolve().then(() => {
+//   console.log(1);
+// }).then(() => {
+//   console.log(2);
+// }).then(() => {
+//   console.log(3);
+// }).then(() => {
+//   console.log(5);
+// }).then(() =>{
+//   console.log(6);
+// })
+
+
+async function test() {
+  console.log(1111);
+  await test2();
+  console.log(2222);
+}
+
+async function test2() {
+  console.log(3333);
+  return Promise.resolve(1);
+}
+
+
+function main() {
+  console.log(4444);
+  test();
+  console.log(55555);
+}
+
+main();

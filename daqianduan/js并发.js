@@ -238,50 +238,100 @@
 
 // *****************************
 // 并发请求不使用promise api
-const limitRequest = (urls, maxNum) => {
-  const results = [];
-  let index = 0; // 下一个请求的下标
-  let count = 0; // 当前请求完成的数量
-  return new Promise((resolve) => {
-    if (urls.length === 0) {
-      resolve([]);
-      return;
-    }
+// const limitRequest = (urls, maxNum) => {
+//   const results = [];
+//   let index = 0; // 下一个请求的下标
+//   let count = 0; // 当前请求完成的数量
+//   return new Promise((resolve) => {
+//     if (urls.length === 0) {
+//       resolve([]);
+//       return;
+//     }
 
-    const request = async () => {
-      if (index === urls.length) return;
-      const i = index; // 保存序号，使result和urls相对应
-      const url = urls[index];
+//     const request = async () => {
+//       if (index === urls.length) return;
+//       const i = index; // 保存序号，使result和urls相对应
+//       const url = urls[index];
+//       index++;
+
+//       try {
+//         const resp = await fetch(url);
+//         results[i] = resp;
+//       } catch (error) {
+//         results[i] = error;
+//       } finally {
+//         count++;
+//         if (count === urls.length) {
+//           // 全部请求并发完成
+//           resolve(results);
+//         }
+//         request();
+//       }
+//     };
+
+//     const times = Math.min(maxNum, urls.length);
+//     for (let i = 0; i < times; i++) {
+//       request();
+//     }
+//   });
+// };
+
+// // 测试
+// const urls = [];
+// for (let i = 1; i < 20; i++) {
+//   urls.push(`https://jsonplaceholder.typicode.com/todos/${i}`);
+// }
+
+// limitRequest(urls, 3).then((res) => {
+//   console.log(res);
+// });
+
+const req = (val, time) => () => {
+  return new Promise((res, rej) => {
+    setTimeout(() => {
+      console.log(`${val}结束了`);
+      res(val);
+    }, time * 1000);
+  });
+};
+
+const reqArr = [req(1, 4), req(2, 1), req(3, 4), req(4, 7), req(5, 1)];
+
+const limitReq = (limit, arr) => {
+  const result = [];
+  let index = 0;
+  let count = 0;
+  return new Promise((resolve, reject) => {
+    const run = async () => {
+      if (index === arr.length) {
+        return;
+      }
+      const req = arr[index];
       index++;
-
       try {
-        const resp = await fetch(url);
-        results[i] = resp;
+        const resp = await req();
+        // 等待请求执行完，才index自增，错误的
+        // const resp = await arr[index]()
+        // index++;
+        console.log('index', index);
+        result.push(resp);
       } catch (error) {
-        results[i] = error;
+        result.push(error);
       } finally {
         count++;
-        if (count === urls.length) {
-          // 全部请求并发完成
-          resolve(results);
+        if (count === arr.length) {
+          resolve(result);
         }
-        request();
+        run();
       }
     };
 
-    const times = Math.min(maxNum, urls.length);
-    for (let i = 0; i < times; i++) {
-      request();
+    const minLength = Math.min(limit, arr.length);
+
+    for (let i = 0; i < minLength; i++) {
+      run();
     }
   });
 };
 
-// 测试
-const urls = [];
-for (let i = 1; i < 20; i++) {
-  urls.push(`https://jsonplaceholder.typicode.com/todos/${i}`);
-}
-
-limitRequest(urls, 3).then((res) => {
-  console.log(res);
-});
+limitReq(2, reqArr).then((res) => console.log(res));

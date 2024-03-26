@@ -27,3 +27,25 @@ Function.prototype.myBind = function(target, ...args) {
         return res;
     }
 }
+
+
+Function.prototype.myApply = function(target, args) {
+  target = target || window;
+  const foo = Symbol();
+  target[foo] = this;
+
+  const result = target[foo](...args);
+  delete target[foo];
+  return result;
+}
+
+Function.prototype.myBind = function(target, ...args) {
+  target = target || {};
+  const foo = Symbol();
+  target[foo] = this;
+
+  return function(...val) {
+    const result = target[foo](...args, ...val);
+    return result;
+  }
+}
