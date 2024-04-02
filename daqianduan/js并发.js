@@ -313,7 +313,6 @@ const limitReq = (limit, arr) => {
         // 等待请求执行完，才index自增，错误的
         // const resp = await arr[index]()
         // index++;
-        console.log('index', index);
         result.push(resp);
       } catch (error) {
         result.push(error);

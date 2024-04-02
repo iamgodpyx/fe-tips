@@ -1,25 +1,47 @@
-const deepClone = (obj, hash = new WeakMap()) => {
-  // if (obj instanceof RegExp) return new RegExp(obj);
-  // if (obj instanceof Date) return new Date(obj);
+// const deepClone = (obj, hash = new WeakMap()) => {
+//   // if (obj instanceof RegExp) return new RegExp(obj);
+//   // if (obj instanceof Date) return new Date(obj);
 
-  // 基本数据类型直接返回
-  if (typeof obj !== "object" || obj === null) return obj;
+//   // 基本数据类型直接返回
+//   if (typeof obj !== "object" || obj === null) return obj;
 
-  // 解决循环引用
-  if (hash.has(obj)) return hash.get(obj);
+//   // 解决循环引用
+//   if (hash.has(obj)) return hash.get(obj);
+
+//   let t = obj.constructor();
+
+//   hash.set(obj, t);
+
+//   for (let i in obj) {
+//     if (obj.hasOwnProperty(i)) {
+//       t[i] = deepClone(obj[i], hash);
+//     }
+//   }
+
+//   return t;
+// };
+
+function deepClone(obj, hash = new WeakMap()) {
+  if (typeof obj !== "object" || obj === null) {
+    return obj;
+  }
+
+  if (hash.has(obj)) {
+    return hash.get(obj);
+  }
 
   let t = obj.constructor();
 
   hash.set(obj, t);
 
-  for (let i in obj) {
-    if (obj.hasOwnProperty(i)) {
-      t[i] = deepClone(obj[i], hash);
+  for (let key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      t[key] = deepClone(obj[key], hash);
     }
   }
 
   return t;
-};
+}
 
 //测试
 let a = {

@@ -31,14 +31,26 @@
 // console.log(add(1, 2)(3));
 // console.log(add(1)(2, 3));
 
+// function myCurry(fn) {
+//   return function curriedFn(...args) {
+//     if (args.length < fn.length) {
+//       return function (...val) {
+//         return curriedFn(...[...args, ...val]);
+//       };
+//     }
+//     return fn(...args);
+//   };
+// }
+
 function myCurry(fn) {
   return function curriedFn(...args) {
     if (args.length < fn.length) {
-      return function (...val) {
-        return curriedFn(...[...args, ...val]);
+      return function (...args1) {
+        return curriedFn.call(this, ...[...args, ...args1]);
       };
     }
-    return fn(...args);
+
+    return fn.call(this, ...args);
   };
 }
 

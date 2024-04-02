@@ -72,8 +72,16 @@ function Test(name, age) {
   a.sayName() // 'yck'
 
 
+//  function myNew(Fn, ...args) {
+//     const obj = Object.create(Fn.prototype);
+//     const result = Fn.apply(obj, args);
+//     return result instanceof Object ? result : obj;
+//  }
+
+
  function myNew(Fn, ...args) {
     const obj = Object.create(Fn.prototype);
     const result = Fn.apply(obj, args);
+
     return result instanceof Object ? result : obj;
  }

@@ -18,34 +18,29 @@ Function.prototype.myApply = function (target, args) {
   return res;
 };
 
-Function.prototype.myBind = function(target, ...args) {
-    target = target || {};
-    const symbolKey = Symbol();
-    target[symbolKey] = this;
-    return function(...innerArgs) {
-        const res = target[symbolKey](...args, ...innerArgs);
-        return res;
-    }
-}
-
-
-Function.prototype.myApply = function(target, args) {
-  target = target || window;
-  const foo = Symbol();
-  target[foo] = this;
-
-  const result = target[foo](...args);
-  delete target[foo];
-  return result;
-}
-
-Function.prototype.myBind = function(target, ...args) {
+Function.prototype.myBind = function (target, ...args) {
   target = target || {};
-  const foo = Symbol();
-  target[foo] = this;
+  const symbolKey = Symbol();
+  target[symbolKey] = this;
+  return function (...innerArgs) {
+    const res = target[symbolKey](...args, ...innerArgs);
+    return res;
+  };
+};
 
-  return function(...val) {
-    const result = target[foo](...args, ...val);
-    return result;
-  }
+Function.prototype.myBind = function (target, ...args) {
+  const fn = Symbol();
+  target[fn] = this;
+
+  return function (...args1) {
+    const res = target[fn](...args, ...args1);
+    return res;
+  };
+};
+
+function foo(a, b) {
+  console.log(a + b);
 }
+
+let a = foo.myBind(this, 12341234);
+a(-12312312312);
