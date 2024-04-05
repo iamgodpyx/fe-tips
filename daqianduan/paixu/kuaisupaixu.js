@@ -39,13 +39,13 @@ let quickSort = (arr) => {
 
   for (let i = 1; i < arr.length; i++) {
     if (arr[i] < arr[0]) {
-      left.push(arr[i]); 
+      left.push(arr[i]);
     } else {
       right.push(arr[i]);
     }
   }
   return [...quickSort(left), arr[0], ...quickSort(right)];
-}
+};
 
 const arr = [
   1, 23, 3452, 324, 2346, 2, 1, 324, 1235, 23, 453245, 345, 2, 34, 2, 45, 2345,

@@ -126,6 +126,36 @@
 //   }
 // }
 
+class Scheduler {
+  constructor(max) {
+    this.max = max;
+    this.queue = [];
+    this.doing = 0;
+  }
+
+  add(asyncFunc) {
+    return new Promise((res) => {
+      asyncFunc.resolve = res;
+      if (this.doing < this.max) {
+        this.run(asyncFunc);
+      } else {
+        this.queue.push(asyncFunc);
+      }
+    });
+  }
+
+  async run(asyncFunc) {
+    if (asyncFunc) {
+      this.doing++;
+      const resp = await asyncFunc();
+      asyncFunc.resolve(resp);
+      this.doing--;
+      const newAsyncFunc = this.queue.shift();
+      this.run(newAsyncFunc);
+    }
+  }
+}
+
 const scheduler = new Scheduler(2);
 
 // const timeout = (time) =>
