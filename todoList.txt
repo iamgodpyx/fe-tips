@@ -4979,7 +4979,12 @@ vscode setting配置记录一下
 
 
 
-
+2024 4/8
+高优先级：
+交接文档撰写    done
+晚上miniMax面试
+党员oncall再问下    done
+和游戏公司hr聊下    done
 
 
 
