@@ -5309,6 +5309,171 @@ storage manage文章撰写，发到掘金上
 
 
 
+2024 5/10
+高优先级：
+找设计对一下问题点
+找客户端、后端对一下联调时间
 
+低优先级：
+
+
+
+2024 5/11
+高优先级：
+原子css stylelint规则调研
+
+
+低优先级：
+
+
+
+2024 5/12
+高优先级：
+周日，玩
+
+
+低优先级：
+
+
+
+2024 5/13
+高优先级：
+周一，开发第一个需求：司机调度
+
+
+低优先级：
+
+
+
+2024 5/14
+高优先级：
+周二，开发第一个需求：司机调度
+知识库代码块复制一下
+
+
+低优先级：
+
+
+
+2024 5/15
+高优先级：
+和后端对一下文案
+开发需求
+
+
+低优先级：
+
+
+2024 5/16
+高优先级：
+滴滴山东团建
+
+
+低优先级：
+
+
+2024 5/17
+高优先级：
+滴滴山东团建
+
+
+低优先级：
+
+
+2024 5/18
+高优先级：
+滴滴山东团建
+
+
+低优先级：
+
+
+2024 5/19
+高优先级：
+滴滴山东团建
+
+
+低优先级：
+
+
+2024 5/20
+高优先级：
+开发司机调度需求
+prettier格式化styl文件---待调研
+vue eslint规则和prettier打架：':theme' should be on a new line.eslintvue/max-attributes-per-line
+
+
+低优先级：
+
+
+
+
+
+2024 5/21
+高优先级：
+开发司机调度需求
+
+
+低优先级：
+prettier格式化styl文件---待调研
+vue eslint规则和prettier打架：':theme' should be on a new line.eslintvue/max-attributes-per-line    原因是：vue的一个eslint规则，限制一行可以写几个属性
+
+
+2024 5/22
+高优先级：
+滴滴培训
+
+低优先级：
+
+
+2024 5/23
+高优先级：
+滴滴培训
+
+低优先级：
+
+
+2024 5/24
+高优先级：
+滴滴培训
+
+低优先级：
+
+
+2024 5/25
+高优先级：
+周六，玩
+
+低优先级：
+
+
+2024 5/26
+高优先级：
+周日，玩：去了颐和园
+
+低优先级：
+
+
+2024 5/27
+高优先级：
+开发新需求
+前端css规范看一下，把stylus和原子化css的弄完    done
+- prettier格式化styl文件---待调研
+- vue eslint规则和prettier打架：':theme' should be on a new line.eslintvue/max-attributes-per-line    原因是：vue的一个eslint规则，限制一行可以写几个属性
+- unocss lint不生效
+- >= 1.6.0 < 7.0.0" from node_modules/@vue/cli-plugin-eslint,
+  >=8.0.0" from node_modules/eslint-plugin-prettier,
+  >=1.6.0 <7.0.0" from node_modules/eslint-loader
+  ^8.56.0" from node_modules/@typescript-eslint/utils
+  ^5.2.3 || ^6.0.0 || ^7.0.0" from node_modules/@vue/eslint-config-typescript
+
+低优先级：
+
+
+2024 5/28
+高优先级：
+新需求细评
+
+低优先级：
 
 
