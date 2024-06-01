@@ -5477,3 +5477,43 @@ vue eslint规则和prettier打架：':theme' should be on a new line.eslintvue/m
 低优先级：
 
 
+2022 5/29
+高优先级：
+和网约车那边，对齐前端项目规范  done
+json to ts定义，文档写详细一点  done
+
+低优先级：
+topic 分享，搞一搞：babel
+
+
+2024 5/30
+高优先级：
+司机h5模版cli增加前端项目规范
+
+低优先级：
+topic分享，搞一搞：babel
+
+
+2024 5/31
+高优先级：
+流水线能力调研
+- 高级语法check
+- es6语法check
+- 测试流水线建立
+
+低优先级：
+topic分享，搞一搞：lint
+
+
+
+2024 6/1
+高优先级：
+流水线能力调研
+- 高级语法check
+- es6语法check
+- 测试流水线建立
+开源检查编译后高级语法的工具
+
+低优先级：
+topic分享，搞一搞：lint
+
