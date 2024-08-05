@@ -1,0 +1,251 @@
+{
+    "name": "common_lib",
+    "version": 5,
+    "filenames": [
+      "common_lib_003878e"
+    ],
+    "extInfo": {
+      "onlinePath": "//webapp.didistatic.com/static/webapp/biz-dll/biz-dll-driver/",
+      "devPath": "//webapp.didistatic.com/static/webapp/biz-dll/biz-dll-driver/"
+    },
+    "content": {
+      "./dll.js": {
+        "id": 303,
+        "buildMeta": {
+          "exportsType": "namespace"
+        },
+        "version": "2.1.4",
+        "name": "biz-dll-driver"
+      },
+      "./node_modules/@didi/dajax/dist/dajax.js": {
+        "id": 322,
+        "buildMeta": {},
+        "version": "3.0.7",
+        "name": "@didi/dajax"
+      },
+      "./node_modules/better-scroll/dist/bscroll.esm.js": {
+        "id": 626,
+        "buildMeta": {
+          "exportsType": "namespace"
+        },
+        "version": "1.12.6",
+        "name": "better-scroll"
+      },
+      "./node_modules/call-bind/callBound.js": {
+        "id": 924,
+        "buildMeta": {},
+        "version": "1.0.7",
+        "name": "call-bind"
+      },
+      "./node_modules/call-bind/index.js": {
+        "id": 559,
+        "buildMeta": {},
+        "version": "1.0.7",
+        "name": "call-bind"
+      },
+      "./node_modules/call-bind/node_modules/function-bind/implementation.js": {
+        "id": 801,
+        "buildMeta": {},
+        "version": "1.1.2",
+        "name": "function-bind"
+      },
+      "./node_modules/call-bind/node_modules/function-bind/index.js": {
+        "id": 161,
+        "buildMeta": {},
+        "version": "1.1.2",
+        "name": "function-bind"
+      },
+      "./node_modules/define-data-property/index.js": {
+        "id": 296,
+        "buildMeta": {},
+        "version": "1.1.4",
+        "name": "define-data-property"
+      },
+      "./node_modules/es-define-property/index.js": {
+        "id": 429,
+        "buildMeta": {},
+        "version": "1.0.0",
+        "name": "es-define-property"
+      },
+      "./node_modules/es-errors/eval.js": {
+        "id": 981,
+        "buildMeta": {},
+        "version": "1.3.0",
+        "name": "es-errors"
+      },
+      "./node_modules/es-errors/index.js": {
+        "id": 648,
+        "buildMeta": {},
+        "version": "1.3.0",
+        "name": "es-errors"
+      },
+      "./node_modules/es-errors/range.js": {
+        "id": 726,
+        "buildMeta": {},
+        "version": "1.3.0",
+        "name": "es-errors"
+      },
+      "./node_modules/es-errors/ref.js": {
+        "id": 712,
+        "buildMeta": {},
+        "version": "1.3.0",
+        "name": "es-errors"
+      },
+      "./node_modules/es-errors/syntax.js": {
+        "id": 464,
+        "buildMeta": {},
+        "version": "1.3.0",
+        "name": "es-errors"
+      },
+      "./node_modules/es-errors/type.js": {
+        "id": 453,
+        "buildMeta": {},
+        "version": "1.3.0",
+        "name": "es-errors"
+      },
+      "./node_modules/es-errors/uri.js": {
+        "id": 915,
+        "buildMeta": {},
+        "version": "1.3.0",
+        "name": "es-errors"
+      },
+      "./node_modules/get-intrinsic/index.js": {
+        "id": 210,
+        "buildMeta": {},
+        "version": "1.2.4",
+        "name": "get-intrinsic"
+      },
+      "./node_modules/get-intrinsic/node_modules/function-bind/implementation.js": {
+        "id": 146,
+        "buildMeta": {},
+        "version": "1.1.2",
+        "name": "function-bind"
+      },
+      "./node_modules/get-intrinsic/node_modules/function-bind/index.js": {
+        "id": 544,
+        "buildMeta": {},
+        "version": "1.1.2",
+        "name": "function-bind"
+      },
+      "./node_modules/gopd/index.js": {
+        "id": 275,
+        "buildMeta": {},
+        "version": "1.0.1",
+        "name": "gopd"
+      },
+      "./node_modules/has-property-descriptors/index.js": {
+        "id": 44,
+        "buildMeta": {},
+        "version": "1.0.2",
+        "name": "has-property-descriptors"
+      },
+      "./node_modules/has-proto/index.js": {
+        "id": 185,
+        "buildMeta": {},
+        "version": "1.0.3",
+        "name": "has-proto"
+      },
+      "./node_modules/has-symbols/index.js": {
+        "id": 405,
+        "buildMeta": {},
+        "version": "1.0.3",
+        "name": "has-symbols"
+      },
+      "./node_modules/has-symbols/shams.js": {
+        "id": 419,
+        "buildMeta": {},
+        "version": "1.0.3",
+        "name": "has-symbols"
+      },
+      "./node_modules/hasown/index.js": {
+        "id": 824,
+        "buildMeta": {},
+        "version": "2.0.2",
+        "name": "hasown"
+      },
+      "./node_modules/hasown/node_modules/function-bind/implementation.js": {
+        "id": 454,
+        "buildMeta": {},
+        "version": "1.1.2",
+        "name": "function-bind"
+      },
+      "./node_modules/hasown/node_modules/function-bind/index.js": {
+        "id": 753,
+        "buildMeta": {},
+        "version": "1.1.2",
+        "name": "function-bind"
+      },
+      "./node_modules/object-inspect/index.js": {
+        "id": 631,
+        "buildMeta": {},
+        "version": "1.13.1",
+        "name": "object-inspect"
+      },
+      "./node_modules/qs/lib/formats.js": {
+        "id": 798,
+        "buildMeta": {},
+        "version": "6.11.2",
+        "name": "qs"
+      },
+      "./node_modules/qs/lib/index.js": {
+        "id": 129,
+        "buildMeta": {},
+        "version": "6.11.2",
+        "name": "qs"
+      },
+      "./node_modules/qs/lib/parse.js": {
+        "id": 235,
+        "buildMeta": {},
+        "version": "6.11.2",
+        "name": "qs"
+      },
+      "./node_modules/qs/lib/stringify.js": {
+        "id": 261,
+        "buildMeta": {},
+        "version": "6.11.2",
+        "name": "qs"
+      },
+      "./node_modules/qs/lib/utils.js": {
+        "id": 769,
+        "buildMeta": {},
+        "version": "6.11.2",
+        "name": "qs"
+      },
+      "./node_modules/set-function-length/index.js": {
+        "id": 771,
+        "buildMeta": {},
+        "version": "1.2.2",
+        "name": "set-function-length"
+      },
+      "./node_modules/side-channel/index.js": {
+        "id": 478,
+        "buildMeta": {},
+        "version": "1.0.6",
+        "name": "side-channel"
+      },
+      "./node_modules/vue-router/dist/vue-router.esm.js": {
+        "id": 345,
+        "buildMeta": {
+          "exportsType": "namespace"
+        },
+        "version": "3.6.5",
+        "name": "vue-router"
+      },
+      "./node_modules/vue/dist/vue.runtime.esm.js": {
+        "id": 144,
+        "buildMeta": {
+          "exportsType": "namespace"
+        },
+        "version": "2.7.14",
+        "name": "vue"
+      },
+      "./node_modules/vuex/dist/vuex.esm.js": {
+        "id": 629,
+        "buildMeta": {
+          "exportsType": "namespace"
+        },
+        "version": "3.1.1",
+        "name": "vuex"
+      }
+    }
+  }
